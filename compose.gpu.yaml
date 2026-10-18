@@ -1,0 +1,13 @@
+# Linux NVIDIA override; requires the host's NVIDIA Container Toolkit.
+services:
+  api:
+    environment:
+      CASHWATCH_DEVICE: cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+

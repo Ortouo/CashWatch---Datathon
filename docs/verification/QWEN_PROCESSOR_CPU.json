@@ -1,0 +1,142 @@
+{
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "resolved_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "adapter_source_sha256": "14a58ed4a41f87d9faeb9f7f6e37970917566784ded134ed9823a57a2303e057",
+  "device": "cpu",
+  "platform": "Linux",
+  "python_version": "3.12.14",
+  "torch_version": "2.8.0+cpu",
+  "torchvision_version": "0.23.0+cpu",
+  "transformers_version": "4.57.1",
+  "processor_class": "Qwen3VLProcessor",
+  "image_processor_class": "Qwen2VLImageProcessorFast",
+  "tokenizer_class": "Qwen2TokenizerFast",
+  "image_processor_size": {
+    "longest_edge": 16777216,
+    "shortest_edge": 65536
+  },
+  "image_processor_min_pixels": 65536,
+  "image_processor_max_pixels": 262144,
+  "patch_size": 16,
+  "temporal_patch_size": 2,
+  "merge_size": 2,
+  "local_files_only": true,
+  "trust_remote_code": false,
+  "model_weights_downloaded": false,
+  "model_weights_loaded": false,
+  "generation_tested": false,
+  "bank_data_used": false,
+  "cases": [
+    {
+      "image_count": 2,
+      "input_image_sizes_wh": [
+        [
+          320,
+          240
+        ],
+        [
+          640,
+          480
+        ]
+      ],
+      "input_ids_shape": [
+        1,
+        924
+      ],
+      "attention_mask_shape": [
+        1,
+        924
+      ],
+      "pixel_values_shape": [
+        1256,
+        1536
+      ],
+      "pixel_values_dtype": "torch.float32",
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          20
+        ],
+        [
+          1,
+          26,
+          36
+        ]
+      ],
+      "image_tokens_per_image": [
+        80,
+        234
+      ],
+      "resized_pixels_per_image": [
+        81920,
+        239616
+      ],
+      "image_token_count": 314,
+      "image_token_alignment_passed": true,
+      "frame_timestamp_text_preserved": true,
+      "pixel_values_finite": true
+    },
+    {
+      "image_count": 3,
+      "input_image_sizes_wh": [
+        [
+          320,
+          240
+        ],
+        [
+          640,
+          480
+        ],
+        [
+          256,
+          512
+        ]
+      ],
+      "input_ids_shape": [
+        1,
+        1077
+      ],
+      "attention_mask_shape": [
+        1,
+        1077
+      ],
+      "pixel_values_shape": [
+        1768,
+        1536
+      ],
+      "pixel_values_dtype": "torch.float32",
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          20
+        ],
+        [
+          1,
+          26,
+          36
+        ],
+        [
+          1,
+          32,
+          16
+        ]
+      ],
+      "image_tokens_per_image": [
+        80,
+        234,
+        128
+      ],
+      "resized_pixels_per_image": [
+        81920,
+        239616,
+        131072
+      ],
+      "image_token_count": 442,
+      "image_token_alignment_passed": true,
+      "frame_timestamp_text_preserved": true,
+      "pixel_values_finite": true
+    }
+  ]
+}

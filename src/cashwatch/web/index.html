@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="referrer" content="no-referrer">
+    <title>CashWatch — проверка кассовых операций</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К рабочему месту</a>
+    <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7V5Z"/></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="3"/><path d="m16 9 5-3v12l-5-3"/></symbol>
+      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><path d="m11.5 11.5 9 9m-5-5 3-3m0 6 3-3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="m10.3 4.8-8 14A1.5 1.5 0 0 0 3.6 21h16.8a1.5 1.5 0 0 0 1.3-2.2l-8-14a2 2 0 0 0-3.4 0ZM12 9v5m0 3h.01"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 3h7v7M10 14 21 3m-9 2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    </svg>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/" aria-label="CashWatch, главная">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-name">CashWatch<span class="brand-subtitle">Видеоаналитика кассовых операций</span></span>
+        </a>
+        <div class="header-meta">
+          <span class="edition">DATATHON <span>26</span></span>
+          <button class="server-status" id="server-status" type="button" title="Проверить доступность сервера">
+            <span class="status-dot" aria-hidden="true"></span><span id="server-status-text">Проверяем сервер</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="app-shell">
+      <section class="page-heading" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span class="accent-line" aria-hidden="true"></span>РАБОЧЕЕ МЕСТО ОПЕРАТОРА</p>
+          <h1 id="page-title">Проверка кассовых операций</h1>
+          <p class="page-description">От записи — к конкретному моменту. Проверьте наблюдения модели по кадрам и временным отметкам исходного видео.</p>
+        </div>
+        <span class="mode-label"><span class="status-dot" aria-hidden="true"></span>Локальный анализ</span>
+      </section>
+
+      <section class="access-panel" aria-labelledby="access-title">
+        <div class="access-copy">
+          <span class="access-icon" aria-hidden="true"><svg class="icon"><use href="#i-key"/></svg></span>
+          <div><h2 id="access-title">Доступ к модели</h2><p id="access-help">Ключ хранится только в памяти этой страницы.</p></div>
+        </div>
+        <form id="access-form" class="access-form">
+          <div class="key-field">
+            <label class="sr-only" for="api-key">Ключ API для локального сервера</label>
+            <input id="api-key" name="api-key" type="password" placeholder="Введите ключ API" autocomplete="off" spellcheck="false" autocapitalize="none" aria-describedby="access-help connection-message" required>
+            <button id="toggle-key" class="key-toggle" type="button" aria-label="Показать ключ доступа" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></button>
+          </div>
+          <button class="button button-dark" id="connect-button" type="submit">Подключить <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </form>
+        <p class="connection-message" id="connection-message" role="status">Подключитесь, чтобы проверить готовность локальной модели.</p>
+      </section>
+
+      <div class="workspace">
+        <section class="panel source-panel" aria-labelledby="source-title">
+          <header class="panel-header"><div class="panel-heading"><span class="step-number">01</span><h2 id="source-title">Исходное видео</h2></div><span class="format-chip" id="format-chip">MOV · до 100 МиБ</span></header>
+          <div class="panel-body">
+            <input type="file" id="video-input" accept=".mov" hidden>
+            <button id="drop-zone" type="button" class="drop-zone" aria-describedby="upload-help">
+              <span class="upload-art" aria-hidden="true"><span class="upload-art-back"></span><span class="upload-art-front"><svg class="icon"><use href="#i-upload"/></svg></span></span>
+              <span class="drop-title">Добавьте запись операции</span>
+              <span class="drop-description">Перетащите видео в эту область</span>
+              <span class="file-picker-label">или выберите файл <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              <span class="upload-help" id="upload-help">Формат .mov · один файл до 100 МиБ</span>
+              <span class="preview-help">Просмотр и ручной журнал доступны до настройки модели.</span>
+            </button>
+
+            <div id="file-panel" hidden>
+              <div class="video-stage"><video id="source-video" controls playsinline preload="metadata" aria-label="Исходное видео для проверки"></video></div>
+              <p id="media-warning" class="inline-notice" role="status" hidden></p>
+              <div class="file-meta">
+                <span class="file-icon" aria-hidden="true"><svg class="icon"><use href="#i-video"/></svg></span>
+                <div class="file-meta-copy"><span id="file-name" class="file-name"></span><span id="file-info" class="file-info"></span></div>
+                <button id="change-file" class="text-button" type="button">Заменить</button>
+              </div>
+              <p class="video-hint"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Временные отметки относятся к исходному видео.</p>
+              <details id="manual-review" class="manual-review">
+                <summary>Журнал ручного просмотра <span>Локально</span></summary>
+                <div class="manual-body">
+                  <p class="manual-help">Запись человека для последующей проверки. Это не вывод модели и не готовая разметка. Неизвестная применимость не означает норму.</p>
+                  <p id="manual-status" class="manual-status" role="status">Выберите исходное видео.</p>
+                  <fieldset id="manual-fields" disabled>
+                    <legend class="sr-only">Ручная проверка выбранного видео</legend>
+                    <div class="manual-grid">
+                      <label for="manual-group">Группа / group_id<input id="manual-group" type="text" maxlength="160" autocomplete="off" spellcheck="false" placeholder="Если установлена"></label>
+                      <label for="manual-camera">Камера / camera_id<input id="manual-camera" type="text" maxlength="160" autocomplete="off" spellcheck="false" placeholder="Если установлена"></label>
+                    </div>
+                    <p class="manual-help">Group ID сам по себе не доказывает независимость сцен.</p>
+                    <div class="manual-time-row"><span>Текущий момент <output id="manual-time">—</output></span><button id="manual-add-mark" type="button" class="button button-secondary" disabled>Добавить отметку</button></div>
+                    <label for="manual-mark-note">Заметка к отметке<input id="manual-mark-note" type="text" maxlength="2000" autocomplete="off" placeholder="Необязательно; останется на этом устройстве"></label>
+                    <ul id="manual-marks" class="manual-items" aria-label="Ручные временные отметки"></ul>
+                    <details class="manual-rule-section">
+                      <summary>Применимость правила <span id="manual-rule-count">0</span></summary>
+                      <div class="manual-grid">
+                        <label for="manual-rule-id">rule_id<input id="manual-rule-id" type="text" maxlength="160" autocomplete="off" spellcheck="false" placeholder="ID из config/rules.json"></label>
+                        <label for="manual-applicability">Решение человека<select id="manual-applicability"><option value="unknown">Не установлена</option><option value="confirmed">Применимость подтверждена</option><option value="not_applicable">Правило не применимо</option></select></label>
+                      </div>
+                      <label for="manual-rule-note">Условия и неизвестное<textarea id="manual-rule-note" rows="2" maxlength="4000" autocomplete="off" placeholder="Локальная заметка для проверяющего"></textarea></label>
+                      <button id="manual-save-rule" type="button" class="text-button">Сохранить / обновить проверку</button>
+                      <ul id="manual-rules" class="manual-items" aria-label="Ручные проверки применимости"></ul>
+                    </details>
+                    <label for="manual-note">Общая заметка<textarea id="manual-note" rows="2" maxlength="4000" autocomplete="off" placeholder="Что нужно перепроверить"></textarea></label>
+                  </fieldset>
+                  <button id="manual-export" type="button" class="button button-secondary manual-export" disabled>Скачать ручной журнал · JSON</button>
+                  <p class="manual-help">Записи сохраняются в памяти этой страницы при смене файла. Скачайте JSON перед закрытием: он содержит имя исходника и ваши заметки. Не отправляйте его в облачный чат или GitHub.</p>
+                </div>
+              </details>
+            </div>
+
+            <p id="source-message" class="inline-notice" role="status" hidden></p>
+            <div class="analysis-actions">
+              <button id="analyze-button" class="button button-primary" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><span>Запустить анализ</span><svg class="icon trailing-icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              <button id="cancel-button" class="button button-secondary" type="button" hidden>Остановить ожидание</button>
+              <p id="analysis-prerequisite" class="action-hint">Подключите модель и добавьте видео.</p>
+            </div>
+
+            <section id="progress-panel" class="progress-panel" aria-label="Ход анализа" hidden>
+              <div class="progress-heading"><span id="progress-label">Отправляем видео</span><span id="progress-percent"></span></div>
+              <progress id="upload-progress" max="100" value="0" aria-label="Отправка видео"></progress>
+              <div class="progress-foot"><p id="progress-description">Готовим файл к отправке.</p><span id="elapsed-time" aria-hidden="true">0:00</span></div>
+            </section>
+            <div class="source-footnote"><span class="footnote-dot" aria-hidden="true"></span><p>Интерфейс отправляет видео только на текущий сервер проекта.</p></div>
+          </div>
+        </section>
+
+        <section class="panel result-panel" aria-labelledby="result-title" aria-busy="false" id="result-region">
+          <header class="panel-header"><div class="panel-heading"><span class="step-number">02</span><h2 id="result-title">Результат проверки</h2></div><span class="result-state" id="result-state">Ожидание видео</span></header>
+          <div class="panel-body result-body">
+            <div id="empty-result" class="empty-result">
+              <div class="empty-art" aria-hidden="true"><span class="empty-frame back"></span><span class="empty-frame front"><svg class="icon"><use href="#i-video"/></svg><span class="frame-corners"></span></span><span class="empty-check"><svg class="icon"><use href="#i-eye"/></svg></span></div>
+              <p class="eyebrow">НАБЛЮДЕНИЕ → ПРОВЕРКА</p>
+              <h3>Каждое событие —<br>с опорой на видео</h3>
+              <p>После анализа здесь появятся наблюдения модели, временные отметки и кадры для проверки.</p>
+              <div class="empty-features"><span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Точные моменты</span><span><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg>Кадры из записи</span></div>
+            </div>
+
+            <div id="busy-result" class="busy-result" hidden>
+              <span class="analysis-spinner" aria-hidden="true"></span>
+              <p class="eyebrow">ЗАДАНИЕ В РАБОТЕ</p>
+              <h3 id="busy-title">Отправляем видео</h3>
+              <p id="busy-description">Прогресс отправки показан рядом. Исходное видео доступно для просмотра.</p>
+              <span class="job-tag" id="busy-job-id" hidden></span>
+            </div>
+
+            <div id="error-result" class="error-result" role="alert" hidden>
+              <span class="error-symbol" aria-hidden="true"><svg class="icon"><use href="#i-alert"/></svg></span>
+              <h3 id="error-title">Анализ не завершён</h3>
+              <p id="error-description"></p>
+              <span id="error-job-id" class="job-tag" hidden></span>
+              <button class="button button-secondary" id="retry-button" type="button">Повторить анализ</button>
+            </div>
+
+            <div id="completed-result" hidden>
+              <div id="verdict-card" class="verdict-card">
+                <span id="verdict-icon" class="verdict-icon" aria-hidden="true"></span>
+                <div><p class="verdict-eyebrow">РЕЗУЛЬТАТ МОДЕЛИ</p><h3 id="verdict-title"></h3><p id="verdict-description"></p></div>
+              </div>
+              <div class="result-toolbar"><span class="job-tag" id="result-job-id"></span><button class="text-button download-button" type="button" id="download-button"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Скачать JSON</button></div>
+              <div id="review-warnings" class="review-warnings" role="status" hidden></div>
+              <div id="events-list" class="events-list"></div>
+              <p id="no-events-note" class="no-events-note" hidden>Модель не указала событий для проверки. Этот результат сам по себе не подтверждает соблюдение всех требований.</p>
+              <details class="analysis-details" id="analysis-details" hidden><summary>Сведения об анализе</summary><dl id="details-list" class="details-list"></dl></details>
+              <details class="analysis-details source-details" id="source-details" hidden><summary>Основания проверки</summary><div id="sources-list" class="sources-list"></div></details>
+              <p class="review-note"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg><span>Автоматический анализ помогает оператору. Окончательное заключение требует проверки исходной записи.</span></p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="page-footer"><span>CashWatch <span class="footer-divider">/</span> Datathon 26</span><span>Момент. Наблюдение. Доказательство.</span></footer>
+    </main>
+
+    <dialog id="frame-dialog" class="frame-dialog" aria-labelledby="frame-dialog-title">
+      <header class="dialog-header"><h2 id="frame-dialog-title">Кадр исходного видео</h2><button id="close-dialog" class="icon-button" type="button" aria-label="Закрыть кадр"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header>
+      <div class="dialog-image-stage"><img id="dialog-image" alt=""></div>
+      <footer class="dialog-footer"><span id="dialog-timecode" class="timecode-label"></span><button id="seek-from-dialog" class="button button-primary" type="button"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Перейти в видео</button></footer>
+    </dialog>
+    <div class="sr-only" id="announcer" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

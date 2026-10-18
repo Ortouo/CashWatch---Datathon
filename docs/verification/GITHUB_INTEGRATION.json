@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "cashwatch_github_integration_verification",
+  "integration_date_utc": "2026-10-17",
+  "repository": "munlicode/nu-datathon-26",
+  "base_commit": "14a9e507455abb446062243518321a692d488bef",
+  "local_branch": "work/cashwatch-integration-20261017",
+  "remote_published": false,
+  "latest_github_access": {
+    "login": "rokerblym",
+    "status": "404_not_found",
+    "successful_clone_earlier_in_session": true,
+    "reason_for_changed_visibility": "unknown"
+  },
+  "python": {
+    "environment": "Linux x86_64, Python 3.12.14",
+    "command": "python -m pytest -q -o faulthandler_timeout=25",
+    "passed": 153,
+    "subtests_passed": 86,
+    "failed": 0,
+    "warnings": 1,
+    "seconds": 16.51,
+    "warning": "Starlette TestClient httpx deprecation",
+    "synthetic_only": true,
+    "os_socket_guard_disabled": false
+  },
+  "plus1_review_regressions": {
+    "passed": 8,
+    "subtests_passed": 3,
+    "seconds": 0.04,
+    "scope": [
+      "transitive_evaluation_sha_group_exclusion",
+      "historical_ledger_group_and_split_links",
+      "single_input_snapshots",
+      "fail_before_partial_output",
+      "safe_bounded_json_read_errors"
+    ]
+  },
+  "browser_integration": {
+    "passed": 20,
+    "failed": 0,
+    "seconds": 7.323152166,
+    "browser": "Chromium 136.0.7103.25",
+    "runner": "Playwright 1.52.0",
+    "os": "Linux",
+    "synthetic_only": true,
+    "regression_reproduced_before_fix": true,
+    "evidence": "PLUS2_UI_HANDOFF.json",
+    "user_mac_disk_download_verified": false
+  },
+  "bank_case_media_read_during_this_integration": false,
+  "rules_registry_sha256": "49a0c2a391f8d58f61cc9714478a52565d31698f507c32297c69f882ea5879de",
+  "rules_changed": false,
+  "active_reviewed_rules": 0,
+  "real_model_generation_tested_here": false,
+  "competition_quality_measured": false,
+  "public_endpoint_verified": false,
+  "mac_runtime_evidence": "USER_MAC_PREFLIGHT.json",
+  "limitations": [
+    "User Mac MPS imports and tiny operation reported successful, full model not loaded.",
+    "Plus2 Windows browser evidence is attributed to its handoff, not a Mac or model result.",
+    "No new bank data review, training, evaluation or cloud inference performed."
+  ]
+}

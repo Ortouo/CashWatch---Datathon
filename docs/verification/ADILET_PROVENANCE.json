@@ -1,0 +1,105 @@
+{
+  "checked_at_utc": "2026-10-17T09:51:06.706488+00:00",
+  "document": {
+    "public_url": "https://adilet.zan.kz/rus/docs/V1900019680",
+    "api_url": "https://adilet.zan.kz/api/documents/by-ngr/V1900019680?language=rus",
+    "id": "c4cd4052-63e3-475b-ba9e-93f23de13fdb",
+    "is_actual": true,
+    "has_content": true,
+    "is_stub": false,
+    "text_html_characters": 168836,
+    "text_html_sha256": "1798a349b2326ba4c32a007a62db532ea6de906e71f0249a9de8dc81aa915de8",
+    "text_plain_characters": 118550,
+    "main_rules_1_through_133_present": true,
+    "original_entry_into_force_from_resolution_clause_6": "2020-01-01",
+    "official_name": "Постановление Правления Национального Банка Республики Казахстан от 29 ноября 2019 года № 231. Зарегистрировано в Министерстве юстиции Республики Казахстан 3 декабря 2019 года № 19680.",
+    "publication_reference": "Эталонный контрольный банк НПА РК в электронном виде, 09.12.2019",
+    "text_verified": true,
+    "scene_applicability_verified": false,
+    "all_rules_disabled": true
+  },
+  "history": {
+    "api_url": "https://adilet.zan.kz/api/documents/c4cd4052-63e3-475b-ba9e-93f23de13fdb/versions?page=1&page_size=500",
+    "received_versions": 19,
+    "total_count": 19,
+    "current": [
+      {
+        "document_id": "c4cd4052-63e3-475b-ba9e-93f23de13fdb",
+        "revision_date_raw": "2026-07-11T18:00:00.000Z"
+      }
+    ],
+    "interpretation_limit": "revision_date and main API end_date are not each amendment entry-into-force dates; preserve raw date. History contains duplicate dates."
+  },
+  "amendment_71": {
+    "public_url": "https://adilet.zan.kz/rus/docs/V2500037429",
+    "api_url": "https://adilet.zan.kz/api/documents/by-ngr/V2500037429?language=rus",
+    "official_name": "Постановление Правления Национального Банка Республики Казахстан от 10 ноября 2025 года № 71. Зарегистрировано в Министерстве юстиции Республики Казахстан 18 ноября 2025 года № 37429",
+    "publication_reference": "Эталонный контрольный банк НПА РК в электронном виде, 20.11.2025",
+    "target_amendment_section": 4,
+    "effective_rule": "ten calendar days after the day of first official publication; delayed 2026-01-01 exception applies to listed paragraphs in amendment section 3 and Appendix 1, not section 4 / clause 55",
+    "effective_date_calculation_if_single_recorded_publication_is_first": "2025-12-01",
+    "date_calculation_is_inference": true
+  },
+  "metadata_quality_notes": [
+    "Normalized adoption_date equals justice_reg_date and conflicts with adoption date in official_name.",
+    "Normalized publication_date differs from date in publication_reference for both principal act and amendment; do not use it as first publication date.",
+    "SPA build date and imported-record created_at/updated_at are not legal effective dates."
+  ],
+  "access": "Public official HTTPS API; no authentication required.",
+  "clauses": {
+    "22": {
+      "url": "https://adilet.zan.kz/rus/docs/V1900019680#z114",
+      "scope_review": "Cashier departure before completion of customer service; located in the cash receipt section. Requires reliable operation and temporal context."
+    },
+    "42": {
+      "url": "https://adilet.zan.kz/rus/docs/V1900019680#z163",
+      "scope_review": "Supervision of counting, sorting and packing, with an explicit exception for receiving or paying cash to a customer. A missing person in frame does not prove absence."
+    },
+    "55": {
+      "url": "https://adilet.zan.kz/rus/docs/V1900019680#z193",
+      "scope_review": "Locking and sealing cassettes for automatic devices; does not apply to every cash drawer. Observe completion of preparation before assigning a breach."
+    }
+  },
+  "primary_response_checksums": [
+    {
+      "filename": "ngr_resolver_response.json",
+      "bytes": 274526,
+      "sha256": "550565d2c5e2236d057d3f6dd398b8bec7366b20c8bf8abbf0287fa3224c1505"
+    },
+    {
+      "filename": "document_by_id_response.json",
+      "bytes": 274526,
+      "sha256": "7673bb226dadb5a91fa3906c2da517ffc15d497a5dba3ad14ae549d59d3d1ed6"
+    },
+    {
+      "filename": "resolved_versions_response.json",
+      "bytes": 21105,
+      "sha256": "662846a3a9713fd2ec971d2491ebfd762ccc86c5f9a41166672dc86010f701da"
+    },
+    {
+      "filename": "act_full_text.html",
+      "bytes": 264671,
+      "sha256": "1798a349b2326ba4c32a007a62db532ea6de906e71f0249a9de8dc81aa915de8"
+    },
+    {
+      "filename": "act_full_text.txt",
+      "bytes": 214385,
+      "sha256": "f8a15f08a17f321721032d94279a799e62a9a370899ada6279b5bf534433d248"
+    },
+    {
+      "filename": "amendment_71_response.json",
+      "bytes": 100484,
+      "sha256": "5f58f316bb3d745e101d5659449f0c0767aabea8e64a207f9cafbfb59a475a5c"
+    },
+    {
+      "filename": "amendment_71_full_text.html",
+      "bytes": 93570,
+      "sha256": "df90633b6503c249f77d8d74a3c28e40486d6811a66d7043294c4703797820b5"
+    },
+    {
+      "filename": "amendment_71_full_text.txt",
+      "bytes": 72673,
+      "sha256": "0975ff940d50d8a380f637a3eda86c657e5d93941c8cb788c8b84b405cc27de6"
+    }
+  ]
+}

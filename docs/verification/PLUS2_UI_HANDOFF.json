@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "kind": "ui_handoff_verification",
+  "date": "2026-10-17",
+  "scope": "Synthetic frontend integration evidence; not predictions or model-quality evaluation",
+  "github": {
+    "base_commit": "14a9e507455abb446062243518321a692d488bef",
+    "local_branch": "work/cashwatch-integration-20261017",
+    "historical_clone": "succeeded",
+    "latest_access": "404 reported by integration owner after prior successful clone",
+    "remote_publication": "unconfirmed"
+  },
+  "archive": {
+    "filename": "CashWatch_Plus2_UI_Handoff.zip",
+    "sha256": "922db70f358adb0cc515e0001ebc888797bfc841305fd8fd5ef3edffdab164cc",
+    "entries": 15,
+    "uncompressed_bytes": 538300,
+    "member_sha256": {
+      "docs/UI_QA.md": "c7285669bde06c25cda5d5233cbbbef213abb88727dd2bfc570051d13faa840f",
+      "docs/DEMO_SCRIPT.md": "c0a174e7120daf567617ffffe588c9c69d823a3f8a5612df8554aa2019db1da6",
+      "docs/DELIVERY_CHECKLIST.md": "32e454956c358f02d8b277b33893ab0aa9acc6c1a8a412ca26089c2954f07f4d",
+      "Plus2_UI_Delivery.patch": "6d6c78264d4e9518571c5b281b276a11b6afa5fdc50ddf8232417cbdedde2444",
+      "evidence/SUMMARY.json": "a9b0b91cdb8011a15ed0d1c4c4c16646db746f456fab9f42b439382c779cde33",
+      "evidence/regression-before.json": "af62c3169154c7a9971e23386c13d920b1b9440c151dddb6942aac548f484095",
+      "evidence/regression-after.json": "d981d86831f8d4905a6dab9cd1d603e21636004ba6df4725a692e3bdedf51c45"
+    },
+    "separate_uploaded_docs_byte_identical": true,
+    "bundled_executables_run": false
+  },
+  "reported_plus2": {
+    "evidence_origin": "Provided Plus 2 text/JSON reports; Windows run was not re-executed by integrator",
+    "environment": "Windows; installed Chrome headless; synthetic fixtures only",
+    "browser": "155.0.8059.40",
+    "passed": 32,
+    "failed_after_patch": 0,
+    "not_run": 14,
+    "not_run_breakdown": {
+      "mac_target_directions": 10,
+      "physical_download_verification": 1,
+      "actual_model_mov_end_to_end": 1,
+      "external_https_access": 1,
+      "full_300_second_wait": 1
+    },
+    "download_scope": "Generated Blob inspected; OS downloads canceled in their test environment",
+    "reported_base_app_sha256": "b2342ee6a94c78fab223c9163ffd749946ffa83c93e824afab3cdb6dfb334a04",
+    "reported_patched_app_sha256": "db10d6e6602eaed00644390c81f2aea4be71d9845a4ad62e1fb4948dbc144ef6"
+  },
+  "integrator_regression_before": {
+    "executed": true,
+    "failed_as_expected": true,
+    "condition": "Actual synthetic 3-second VP9 decoded, then media duration replaced by NaN and durationchange dispatched",
+    "expected_duration_sec": null,
+    "observed_duration_sec": 3
+  },
+  "integrator_final": {
+    "executed": true,
+    "environment": "Linux; Playwright 1.52.0; local static HTTP harness with synthetic health/capabilities and synthetic media",
+    "browser": "136.0.7103.25",
+    "passed": 20,
+    "failed": 0,
+    "wall_time_sec": 7.323152166,
+    "test_path": "tests/frontend_manual_review.cjs",
+    "results": [
+      {
+        "name": "Manual journal and real SHA export work before API authentication/model",
+        "passed": true
+      },
+      {
+        "name": "Real decoded synthetic timestamp, unknown applicability, exact JSON contract and text escaping",
+        "passed": true
+      },
+      {
+        "name": "Unsaved rule draft blocks export; explicit applicability updates replace same rule once",
+        "passed": true
+      },
+      {
+        "name": "Different files isolated; same SHA under another filename restores edits and correct source",
+        "passed": true
+      },
+      {
+        "name": "Deletion changes export; an unattached mark note cannot silently disappear",
+        "passed": true
+      },
+      {
+        "name": "Expanded manual panel fits desktop, 390px and 320px layouts",
+        "passed": true
+      },
+      {
+        "name": "Selection, editing and export make zero HTTP requests and use no persistent browser storage",
+        "passed": true
+      },
+      {
+        "name": "Delayed real Web Crypto digest cannot overwrite a newer file or its notes",
+        "passed": true
+      },
+      {
+        "name": "Hash failure explicitly blocks export while preserving local preview",
+        "passed": true
+      },
+      {
+        "name": "Invalidated duration, media error and emptied metadata export null, preserve prior marks and block time actions",
+        "passed": true
+      },
+      {
+        "name": "Missing weights take priority over aggregate model=false and other missing components",
+        "passed": true
+      },
+      {
+        "name": "Missing ML packages take priority over aggregate model=false",
+        "passed": true
+      },
+      {
+        "name": "Missing decoder takes priority over aggregate model=false",
+        "passed": true
+      },
+      {
+        "name": "Legacy unconfigured capabilities keep the generic model fallback",
+        "passed": true
+      },
+      {
+        "name": "Unknown optional fields do not become explicit missing-component failures",
+        "passed": true
+      },
+      {
+        "name": "Configured model with no active rules keeps its separate rules blocker",
+        "passed": true
+      },
+      {
+        "name": "Legacy configured capabilities without optional flags still allow analysis",
+        "passed": true
+      },
+      {
+        "name": "HTTP 401 remains a separate auth failure and does not block the local journal",
+        "passed": true
+      },
+      {
+        "name": "Reload clears the key and authorization without using persistent browser storage",
+        "passed": true
+      },
+      {
+        "name": "No JavaScript exceptions, uploads or external requests in all focused cases",
+        "passed": true
+      }
+    ],
+    "duration_regression_modes": [
+      "unknown-duration",
+      "media-error",
+      "empty-metadata"
+    ],
+    "download_scope": "Generated test download file read through Playwright on Linux; not a user Mac disk verification"
+  },
+  "integration_decisions": [
+    "Merged duration, media-error, metadata-label and seek guards from Plus 2",
+    "Preserved integrator readiness priority and existing rules-blocker label",
+    "Preserved prior manual marks and clarified null-duration export message",
+    "No API/schema/model/rule changes"
+  ],
+  "unconfirmed": [
+    "User Mac MOV playback",
+    "User Mac journal JSON saved and reopened",
+    "Complete real model MOV/API run and latency",
+    "Model quality on independent groups or holdout",
+    "Public HTTPS endpoint and external network access",
+    "Remote GitHub publication"
+  ],
+  "changed_code_sha256": {
+    "src/cashwatch/web/app.js": "3bde469ac3f205f87f33357e7ca2d383f95e6566fc7c44c9e667c0b33282f59f",
+    "tests/frontend_manual_review.cjs": "52793ead21ef5f956370020c309418a7960ee173890b7e55cb37e7947a6d6ee3"
+  },
+  "bank_materials_used": false
+}

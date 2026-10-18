@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "performed_at_utc": "2026-10-17T11:17:59.352995+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "system": "Linux",
+    "machine": "x86_64",
+    "ml_packages": {
+      "torch": false,
+      "torchvision": false,
+      "transformers": false,
+      "accelerate": false,
+      "huggingface_hub": false
+    }
+  },
+  "installation": {
+    "isolated_venv": true,
+    "core_lock_installed": true,
+    "editable_project_installed_without_dependencies": true,
+    "pip_check_passed": true
+  },
+  "server": "real Uvicorn process with cashwatch.main:app_factory --factory; one worker on loopback",
+  "checks": [
+    {
+      "name": "health_returns_alive",
+      "passed": true
+    },
+    {
+      "name": "real_index_served",
+      "passed": true
+    },
+    {
+      "name": "real_javascript_served",
+      "passed": true
+    },
+    {
+      "name": "capabilities_requires_key",
+      "passed": true
+    },
+    {
+      "name": "authorized_capabilities_reports_missing_model",
+      "passed": true
+    },
+    {
+      "name": "analysis_refuses_unconfigured_model",
+      "passed": true
+    },
+    {
+      "name": "analysis_requires_key_before_readiness",
+      "passed": true
+    }
+  ],
+  "passed": 7,
+  "failed": 0,
+  "capabilities": {
+    "weights_present": false,
+    "ml_packages_present": false,
+    "model_configured": false,
+    "active_rules": 0,
+    "analysis_configured": false,
+    "ready_for_submission": false
+  },
+  "limitations": [
+    "Linux x86_64 verification; commands were not run on the user Mac or Windows laptop.",
+    "No ML packages, model weights, video inference, training, or dataset quality measurement.",
+    "No bank media or scene descriptions were used.",
+    "No public endpoint or GitHub publication was performed."
+  ]
+}

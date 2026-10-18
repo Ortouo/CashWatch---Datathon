@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "kind": "cashwatch_runtime_journal_engineering_verification",
+  "date": "2026-10-17",
+  "python_checks": {
+    "environment": "Linux x86_64, Python 3.12.14",
+    "command": "python -m pytest -q tests/test_api.py tests/test_jury_check.py tests/test_runtime_contract.py tests/test_local_tools.py",
+    "passed_tests": 63,
+    "passed_subtests": 45,
+    "failed_tests": 0,
+    "duration_seconds": 14.34,
+    "warnings": 1,
+    "initial_restricted_attempt": {
+      "passed_tests": 45,
+      "passed_subtests": 45,
+      "failed_tests": 1,
+      "reason": "existing_missing_model_test_reached_network_isolation_unavailable_before_model_unavailable"
+    },
+    "successful_profile": "authorized_local_unix_and_loopback_sockets",
+    "product_network_guard_changed_or_disabled": false
+  },
+  "browser_checks": {
+    "environment": "Linux, Playwright 1.52.0, Chromium Headless 136.0.7103.25",
+    "test": "tests/frontend_manual_review.cjs",
+    "passed_scenarios": 10,
+    "failed_scenarios": 0,
+    "duration_seconds": 4.55,
+    "media": "synthetic_only",
+    "decoded_media": "VP9 MP4",
+    "health_and_capabilities": "explicit_synthetic_local_harness",
+    "actual_web_crypto_used": true,
+    "http_requests_during_selection_edit_and_export": 0,
+    "persistent_browser_storage_used": false,
+    "mac_or_safari_tested": false,
+    "previous_25_ui_scenarios_rerun": false
+  },
+  "mac_status": "user_reported_core_startup_working",
+  "real_qwen_inference_run": false,
+  "bank_case_media_used_in_checks": false,
+  "gpu_performance_measured": false,
+  "accuracy_measured": false,
+  "public_endpoint_verified": false,
+  "weights_hashes_verified_by_runtime_contract": false,
+  "rules_enabled_by_this_update": false
+}
